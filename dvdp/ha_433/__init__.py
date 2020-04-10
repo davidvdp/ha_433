@@ -1,0 +1,1 @@
+from dvdp.ha_433.light import HA433Light
