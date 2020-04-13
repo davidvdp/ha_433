@@ -1,9 +1,9 @@
-# Home Assistant 433 devices
+# Home Assistant 433 MHz devices
 Types of devices supported:
 1. Light
 
 ## Install
-`$ pip install dvdp.ha-433`
+`$ sudo pip install dvdp.ha-433`
 
 ## Use
 ### 1 - Record

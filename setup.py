@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 from pathlib import Path
 
 this_dir = Path(__file__).parent
@@ -9,7 +9,7 @@ with open(this_dir / 'requirements.txt') as file:
 with open(this_dir / 'README.md') as file:
     long_description = file.read()
 
-version = '0.1.5'
+version = '0.1.6'
 package_name = 'ha_433'
 top_ns = 'dvdp'
 
@@ -17,7 +17,7 @@ setup(
     name=f'{top_ns}.{package_name}',
     version=version,
     packages=[
-        f'{top_ns}.ha_433',
+        f'{top_ns}.{package_name}',
         f'{top_ns}.recorder_433',
         f'{top_ns}.transmitter_433',
     ],
@@ -27,7 +27,7 @@ setup(
     author='David van der Pol',
     author_email='david@davidvanderpol.com',
     license='MIT',
-    description='Home assistant 433 devices over MQTT.',
+    description='Home assistant 433 MHz devices over MQTT.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     install_requires=requirements,
@@ -41,7 +41,7 @@ setup(
         'MQTT',
         'Home',
         'Assistant',
-        '433',
+        '433 MHz',
         'KlikAanKlikUit',
         'ASK',
     ],
