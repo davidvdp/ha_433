@@ -8,8 +8,10 @@ with open(this_dir / 'requirements.txt') as file:
 
 with open(this_dir / 'README.md') as file:
     long_description = file.read()
+	
+with open(this_dir / 'VERSION') as file:
+    version = file.read()
 
-version = '0.1.6'
 package_name = 'ha_433'
 top_ns = 'dvdp'
 
