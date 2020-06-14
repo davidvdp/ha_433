@@ -8,6 +8,12 @@ from dvdp.recorder_433 import RECORDINGS_DIR, get_recordings
 from dvdp.ha_mqtt.client import MQTTClient
 
 
+def exception_handler(loop, context):
+    loop.default_exception_handler(context)
+    logging.error(context)
+    loop.stop()
+
+
 def main():
     logging.basicConfig(
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -75,9 +81,11 @@ def main():
         loop.create_task(device.start())
         for device in devices
     ]
+    loop.set_exception_handler(exception_handler)
     loop.run_until_complete(
         asyncio.gather(
-            *tasks
+            *tasks,
+            return_exceptions=True,
         )
     )
 
